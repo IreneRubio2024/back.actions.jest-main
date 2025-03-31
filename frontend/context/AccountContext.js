@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useState } from "react";
 
-export const HandleAccountContext = createContext([]);
+export const HandleAccountContext  = createContext([]);
 
 export default function AccountContext({ children }) {
   const [session, setSession] = useState([]);

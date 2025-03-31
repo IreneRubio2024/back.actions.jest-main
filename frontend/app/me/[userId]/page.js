@@ -11,7 +11,7 @@ export default function UserAccount() {
   const [addMoney, setAddMoney] = useState(0);
 
   async function depositMoney() {
-    const response = await fetch("http://localhost:4000/deposit", {
+    const response = await fetch("http://localhost:3001/deposit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: addMoney, id: userData.id }),
@@ -30,7 +30,7 @@ export default function UserAccount() {
 
   useEffect(() => {
     async function verifyLogin() {
-      const response = await fetch("http://localhost:4000/verifyLogin", {
+      const response = await fetch("http://localhost:3001/verifyLogin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(session),

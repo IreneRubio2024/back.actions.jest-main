@@ -4,14 +4,14 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 
 const app = express();
-const PORT = 4000;
+const PORT = 3001;
 
 const pool = mysql.createPool({
   user: "root",
   password: "root",
   host: "localhost",
   database: "bank2",
-  port:8889,
+  port: 8889
 });
 
 async function query(sql, params) {

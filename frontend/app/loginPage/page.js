@@ -17,7 +17,7 @@ export default function loginPage() {
     setPassword("");
     setUserName("");
 
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch("http://localhost:3001/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(login),

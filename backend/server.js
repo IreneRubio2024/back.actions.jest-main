@@ -11,7 +11,7 @@ const pool = mysql.createPool({
   password: "root",
   host: "localhost",
   database: "bank2",
-  port: 8889
+  port: 8889,
 });
 
 async function query(sql, params) {

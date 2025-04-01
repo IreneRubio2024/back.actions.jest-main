@@ -59,7 +59,7 @@ export default function UserAccount() {
   }, [userData]);
 
   async function logOut() {
-    await fetch("http://localhost:4000/logOut", {
+    await fetch("http://localhost:3001/logOut", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(session),

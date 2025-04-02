@@ -9,7 +9,7 @@ const PORT = 3001;
 const pool = mysql.createPool({
   user: "root",
   password: "root",
-  host: "mysql",
+  host: "process.env.HOST",
   database: "bank2",
   port: 8889,
 });

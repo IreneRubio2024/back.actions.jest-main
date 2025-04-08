@@ -24,7 +24,7 @@ jobs:
           target: "/home/ubuntu/bank-med-docker"
 
       - name: Run docker on EC2
-        uses: appleboy/ssh.action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}

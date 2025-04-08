@@ -31,6 +31,6 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           port: 22
           script: |
-            cd /home/ubuntu/bank-med-actions
+            cd /home/ubuntu/bank-med-docker
             sudo docker-compose down
             sudo docker-compose up --build -d

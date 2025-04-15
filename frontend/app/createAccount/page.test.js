@@ -15,7 +15,7 @@ test("calls createNewAccount with correct data", async () => {
   });
   fireEvent.click(screen.getByText("Create Account"));
 
-  expect(fetch).toHaveBeenCalledWith("http://13.60.77.158:3001/createAccount", {
+  expect(fetch).toHaveBeenCalledWith("http://localhost:3006/createAccount", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username: "testUser", password: "testPassword" }),

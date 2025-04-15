@@ -12,7 +12,9 @@ export default function CreateAccountPage() {
     setPassword("");
     setUserName("");
 
-    await fetch("http://localhost:3001/createAccount", {
+    console.log("newAccount", newAccount);
+
+    await fetch("http://localhost:3006/createAccount", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newAccount),

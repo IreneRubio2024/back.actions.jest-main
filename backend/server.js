@@ -4,12 +4,12 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 
 const app = express();
-const PORT = 3001;
+const PORT = 3006;
 
 const pool = mysql.createPool({
   user: "root",
   password: "root",
-  host: "process.env.HOST",
+  host: "localhost",
   database: "bank2",
   port: 8889,
 });
@@ -64,23 +64,25 @@ let session = [];
 app.post("/createAccount", async (req, res) => {
   const { username, password } = req.body;
   console.log(username, password);
-  try {
-    const sql = "INSERT INTO users (username, password) VALUES (?,?)";
-    const params = [username, password];
-    const result = await query(sql, params);
+  // try {
+  const sql = "INSERT INTO users (username, password) VALUES (?,?)";
+  const params = [username, password];
+  const result = await query(sql, params);
 
-    const user = await getUsers(username, password);
-    const userId = user[0].id;
+  console.log("result", result);
 
-    const sql2 = "INSERT INTO accounts (id, balance, token) VALUES (?, ?, ?)";
-    const params2 = [userId, 0, 0];
-    const result2 = await query(sql2, params2);
+  const user = await getUsers(username, password);
+  const userId = user[0].id;
 
-    console.log("users", result, "account", result2);
-    res.send("User Created");
-  } catch (error) {
-    res.status(500).send("Error creating user");
-  }
+  const sql2 = "INSERT INTO accounts (id, balance, token) VALUES (?, ?, ?)";
+  const params2 = [userId, 0, 0];
+  const result2 = await query(sql2, params2);
+
+  console.log("users", result, "account", result2);
+  res.send("User Created");
+  // } catch (error) {
+  //   res.status(500).send("Error creating user");
+  // }
 });
 
 app.post("/login", async (req, res) => {

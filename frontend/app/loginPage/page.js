@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Correct import for useRouter
+import { useRouter } from "next/navigation"; 
 import { HandleAccountContext } from "@/context/AccountContext";
 
 export default function loginPage() {
